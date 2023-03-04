@@ -9,7 +9,7 @@ import {
   fetchAddContacts,
   fetchDeleteContacts,
 } from 'redux/contacts/contacts-operations';
-import { setFilter } from '../../redux/filter/filter-actions';
+import { setFilter } from '../../redux/filter/filter-slice';
 import { getFilteredContacts } from '../../redux/contacts/contacts-selectors';
 import { getFilter } from '../../redux/filter/filter-selectors';
 
@@ -31,10 +31,8 @@ const Phonebook = () => {
     dispatch(fetchDeleteContacts(id));
   };
 
-  const onChangeFilter = event => {
-    const { value } = event.currentTarget;
-    const action = setFilter(value);
-    dispatch(action);
+  const onChangeFilter = ({ target }) => {
+    dispatch(setFilter(target.value));
   };
 
   const isContacts = Boolean(filteredContacts.length);
