@@ -10,10 +10,7 @@ import {
   fetchDeleteContacts,
 } from 'redux/contacts/contacts-operations';
 import { setFilter } from '../../redux/filter/filter-actions';
-import {
-  getFilteredContacts,
-  getAllContacts,
-} from '../../redux/contacts/contacts-selectors';
+import { getFilteredContacts } from '../../redux/contacts/contacts-selectors';
 import { getFilter } from '../../redux/filter/filter-selectors';
 
 const Phonebook = () => {
