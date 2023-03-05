@@ -11,7 +11,7 @@ export const App = () => {
   return (
     <>
       <Provider store={store}>
-        <BrowserRouter>
+        <BrowserRouter basename="/goit-react-hw-07-phonebook">
           <Navbar />
           <Suspense fallback={<div>Loading...</div>}>
             <Routes>
